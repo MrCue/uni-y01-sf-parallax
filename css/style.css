@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap'); /* Import a google font */
+
+body, html {
+    color: #666; /* Default font colour for the page */
+    font-family: "Montserrat", sans-serif; /* Set the default font for the page, followed by a fallback font type which will be used if the given font can't be loaded */
+    font-size: 16px; /* Default font size for the page */
+    font-weight: 400; /* Default font weight for the page */
+    height: 100%; /* Required to allow the first image to be full height */
+    line-height: 1.8em; /* Default line height for the page */
+    margin: 0; /* Remove any margin that some browsers apply */
+}
+
+.section-image {
+    background-attachment: fixed; /* fixed = Parallax, scroll = normal behaviour (Removes parallax effect) */
+    background-position: center; /* Center the image on the page */
+    background-repeat: no-repeat; /* Prevent smaller images from being repeated */
+    background-size: cover; /* Stretch/Shrink the image to fit the whole page */
+    min-height: 400px; /* Set the height of the image to be fixed, Larger values will show the image for more of the scroll */
+    opacity: 0.7; /* Add transparency to the image, lower numbers will make the images appear brighter */
+    position: relative; /* Affects the positioning of the text boxes overlaying the images */
+}
+
+#header-image {
+    background-image: url('../images/backgrounds/mountain-lake.jpg'); /* Path (Relative to the style sheet) to the header image on the file system */
+    min-height: 100%; /** Increase the size of the image to the full height of the screen, overrides the property in .section-image */
+}
+
+#section-one-image {
+    background-image: url('../images/backgrounds/mountain.jpg'); /* Path (Relative to the style sheet) to the first section image on the file system */
+}
+
+#section-two-image {
+    background-image: url('../images/backgrounds/fairytale-castle.jpg'); /* Path (Relative to the style sheet) to the second section image on the file system */
+}
+
+#section-three-image {
+    background-image: url('../images/backgrounds/urban-skyline-night.jpg'); /* Path (Relative to the style sheet) to the third section image on the file system */
+}
+
+#section-four-image {
+    background-image: url('../images/backgrounds/snow-forrest.jpg'); /* Path (Relative to the style sheet) to the fourth section image on the file system */
+}
+
+#footer-image {
+    background-image: url('../images/backgrounds/desert.jpg'); /* Path (Relative to the style sheet) to the footer image on the file system */
+    min-height: 100%; /** Increase the size of the image to the full height of the screen, overrides the property in .section-image */
+}
+
+.section {
+    padding: 50px 80px; /* Add padding, this is shorthand for padding: 50px 80px 50px 80px */
+    /*
+        The above is a shorthand for:
+        padding-top: 50px;
+        padding-right: 80px;
+        padding-bottom: 50px;
+        padding-left: 80px;
+     */
+    text-align: center; /* Align the text in the centre of the block */
+}
+
+.section.light {
+    background-color: #f3f3f3; /* Background colour for this block */
+    color: #000; /* Font colour for this block */
+}
+
+.section.dark {
+    background-color: #252d32; /* Background colour for this block */
+    color: #ded8d8; /* Font colour for this block */
+}
+
+.image-title {
+    color: #000; /* Font colour for this block */
+    font-size: 27px; /* Increase the size of the font */
+    letter-spacing: 8px; /* Increase the horizontal spacing between letters */
+    line-height: 3em; /* Increase the line height for when the words wrap on smaller screens */
+    position: absolute; /* Allow for the middle centre to be provided */
+    text-align: center; /* Position in the center of the parent block */
+    text-transform: uppercase; /* Make all text upper case */
+    top: 50%; /* Position in the middle of the parent block */
+    width: 100%; /* Required to make it centred */
+}
+
+.image-title .text {
+    color: #fff; /* Font colour for this block */
+    padding: 20px; /* Padding from the edges of the block */
+}
+
+.image-title .background {
+    background-color: #111; /* Adds a background for the block, see the difference in header & footer images */
+}
