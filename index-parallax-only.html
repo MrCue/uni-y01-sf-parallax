@@ -5,40 +5,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Parallax demo</title>
         <link rel="stylesheet" href="css/parallax.css"/>
-        <link rel="stylesheet" href="css/navigation.css"/>
     </head>
     <body>
-
-    <div id="responsive-menu">
-        <a href="#" id="responsive-menu-open-button" onClick="return openSideNavigation();">
-            &#9776;
-        </a>
-    </div>
-
-    <nav id="navigation">
-        <ul>
-            <li>
-                <a href="#" id="responsive-menu-close-button" onclick="return closeSideNavigation();">
-                    &times;
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    Link one
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    Link two
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    Link three
-                </a>
-            </li>
-        </ul>
-    </nav>
 
         <!-- Header -->
         <div id="header-image" class="section-image">
@@ -166,15 +134,4 @@
 
 
     </body>
-
-    <script type="text/javascript">
-        function openSideNavigation()
-        {
-            document.getElementById('navigation').style.display = 'block';
-        }
-
-        function closeSideNavigation() {
-            document.getElementById('navigation').style.display = ''; //Do not use none, as this will break the responsiveness.
-        }
-    </script>
 </html>

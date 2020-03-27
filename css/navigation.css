@@ -1,0 +1,91 @@
+/* Change the default browser links style */
+
+a:active, /* selected link */
+a:hover, /* mouse over link */
+a:link, /* unvisited link */
+a:visited /* visited link */
+{
+    color: #666; /* Change the default link colour from the browsers default */
+    text-decoration: none; /* Remove the default underline behaviour from browser default */
+}
+
+#navigation a:hover
+{
+    background-color: #363f49; /* Highlight the current mouseover menu item */
+}
+
+/* Mobile first styles */
+#navigation {
+    background-color: #252d32; /* Background colour for the navigation block */
+    left: 0; /* Make it appear at the left edge of the page */
+    position: fixed; /* Keep the menu in a fixed position */
+    top: 0; /* Make it at appear at the top of the browser window */
+    z-index: 1000; /* Move the layer above everything else so content disappears behind it */
+}
+
+#navigation ul {
+    list-style-type: none; /* Remove the bullet from the list */
+    margin: 0; /* Clear the margin from the element */
+    padding: 0; /* Clear the padding from the element */
+}
+
+#navigation ul li a {
+    display: block; /* Make the whole "A" element including its whitespace clickable */
+    padding: 10px; /* Add some whitespace around the item */
+}
+
+#responsive-menu {
+    font-size: 3em; /* Increase the font size */
+    left: 0; /* Make it positioned left */
+    padding: 10px; /* Move the element away from the edge */
+    position: fixed; /* Position fixed on the page */
+    top: 0; /* Make it top of the page */
+    z-index: 1000; /* Make it appear on top of everything else */
+}
+
+#responsive-menu-close-button
+{
+    font-size: 5em; /* Increase the size of the element */
+    padding-right: 10px !important; /* Remove the right padding */
+    position: absolute; /* Position the element in a specific spot */
+    right: 0; /* Right side of the parent element */
+    top: 0; /* Top of the parent element */
+}
+
+/* Mobile only styles */
+@media only screen and (max-width: 576px) {
+    #navigation {
+        display: none; /* Hide the menu by default */
+        height: 100%; /* Make the navigation element the full height of the page */
+    }
+
+    #navigation ul li a {
+        padding-right: 90px; /* Make the navigation payne wider than the navigation elements */
+    }
+
+    #navigation ul li:nth-child(2) /* Select the 2nd list element in the navigation list */
+    {
+        margin-top: 5em; /* Move the item down to make room for the X button */
+    }
+}
+
+/* Wider browser window styles */
+@media only screen and (min-width: 576px) {
+    #responsive-menu {
+        display: none; /* Hide the responsive menu icon */
+    }
+
+    #navigation {
+        text-align: right; /* Make the menu items appear on the right side of the window */
+        width: 100%; /* Make it the full width of the page */
+    }
+
+    #navigation ul li
+    {
+        display: inline-block; /* Make the menu items appear in a single line */
+    }
+
+    #responsive-menu-close-button {
+        display: none !important; /* Hide the button to close the side menu */
+    }
+}
