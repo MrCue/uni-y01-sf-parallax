@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Parallax demo</title>
+        <link rel="stylesheet" href="css/parallax.css"/>
+        <link rel="stylesheet" href="css/3d-cube.css"/>
+    </head>
+    <body>
+
+        <!-- Header -->
+        <div id="header-image" class="section-image">
+            <div class="image-title">
+                <span class="text">
+                    3D animated image cube demo
+                </span>
+            </div>
+        </div>
+        <!-- //Header -->
+
+        <!-- Section one -->
+        <div id="section-one-image" class="section-image">
+            <div class="image-title">
+                <span class="text background">
+                    3D Cube
+                </span>
+            </div>
+        </div>
+
+        <section class="section light">
+            <h2>3D animated image cube</h2>
+
+            <div class="cube-controls">
+
+                <ul>
+                    <li>
+                        <a href="#" class="cube-control-link" data-show-side="left">
+                            Left
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="cube-control-link" data-show-side="right">
+                            Right
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#" class="cube-control-link" data-show-side="front">
+                            Front
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#" class="cube-control-link" data-show-side="back">
+                            Back
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#" class="cube-control-link" data-show-side="top">
+                            Top
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#" class="cube-control-link" data-show-side="bottom">
+                            Bottom
+                        </a>
+                    </li>
+                </ul>
+
+            </div>
+
+            <div class="_3d-space">
+
+                <div class="_3d-object">
+                    <div class="_3d-face _3d-face--front"></div>
+                    <div class="_3d-face _3d-face--top"></div>
+                    <div class="_3d-face _3d-face--bottom"></div>
+                    <div class="_3d-face _3d-face--left"></div>
+                    <div class="_3d-face _3d-face--right"></div>
+                    <div class="_3d-face _3d-face--back"></div>
+                </div>
+
+            </div>
+
+        </section>
+        <!-- //Section one -->
+
+        <!-- Section two -->
+        <div id="section-two-image" class="section-image">
+            <div class="image-title">
+                <span class="text background">
+                    References
+                </span>
+            </div>
+        </div>
+
+        <section class="section dark">
+            <h2>Ideas from</h2>
+            <ul class="ideas">
+                <li>
+                    <a href="https://css-tricks.com/creating-a-3d-cube-image-gallery/">
+                        https://css-tricks.com/creating-a-3d-cube-image-gallery/
+                    </a>
+                </li>
+                <li>
+                    <a href="https://3dtransforms.desandro.com/cube">
+                        https://3dtransforms.desandro.com/cube
+                    </a>
+                </li>
+                <li>
+                    <a href="https://3dtransforms.desandro.com/box">
+                        https://3dtransforms.desandro.com/box
+                    </a>
+                </li>
+                <li>
+                    <a href="https://3dtransforms.desandro.com/carousel">
+                        https://3dtransforms.desandro.com/carousel
+                    </a>
+                </li>
+                <li>
+                    <a href="https://codepen.io/nopr/pen/rfBJx">
+                        https://codepen.io/nopr/pen/rfBJx
+                    </a>
+                </li>
+            </ul>
+        </section>
+        <!-- //Section two -->
+
+        <!-- Footer -->
+        <div id="footer-image" class="section-image">
+            <div class="image-title">
+                <span class="text background">
+                    3D animated image cube demo
+                </span>
+            </div>
+        </div>
+        <!-- //Footer -->
+
+
+    </body>
+
+    <script type="text/javascript">
+        let cubeControls = document.getElementsByClassName('cube-control-link');
+
+        Array.from(cubeControls).forEach(function(value, index) {
+            value.onclick = cubeControl;
+        });
+
+        function cubeControl(event)
+        {
+            event.preventDefault();
+
+            //Apply the correct rotation
+            switch(event.target.dataset.showSide) {
+                case 'left':
+                    applyRotation('rotateY(90deg)');
+                    break;
+                case 'right':
+                    applyRotation('rotateY(-90deg)');
+                    break;
+                case 'top':
+                    applyRotation('rotateX(-90deg)');
+                    break;
+                case 'bottom':
+                    applyRotation('rotateX(90deg)');
+                    break;
+                case 'front':
+                    applyRotation(''); // Remove the rotation to display the skewed view
+                    break;
+                case 'back':
+                    applyRotation('rotateY(180deg)');
+                    break;
+            }
+        }
+
+        function applyRotation(transformation)
+        {
+            document.querySelectorAll('._3d-object').forEach(function (value, key) {
+                value.style.transform = transformation;
+            });
+        }
+    </script>
+
+</html>
