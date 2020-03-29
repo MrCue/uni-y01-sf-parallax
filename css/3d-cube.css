@@ -1,8 +1,8 @@
 :root
 {
-    --cubeWidth: 250px;
-    --cubeHeight: 250px;
     --cubeDepth: 250px;
+    --cubeHeight: 250px;
+    --cubeWidth: 250px;
 }
 
 a:active, /* selected link */
@@ -14,87 +14,88 @@ a:visited /* visited link */
     text-decoration: none; /* Remove the default underline behaviour from browser default */
 }
 
+.cube-controls a:hover {
+    background-color: #363f49; /* Highlight the current mouseover menu item */
+    color: #fff;
+}
+
 .ideas {
     list-style-type: none;
 }
 
 ._3d-space {
-    perspective: 1000px;
-    width: var(--cubeWidth);
-    height: var(--cubeHeight);
-    text-align: center;
     display: inline-block;
+    height: var(--cubeHeight);
+    perspective: 1000px;
+    text-align: center;
+    width: var(--cubeWidth);
 }
 
 ._3d-object {
     display: inline-block;
-    transition: all 0.85s cubic-bezier(0.175, 0.885, 0.320, 1.275);
-
-    text-align: center;
-    position: relative;
-    width: 100%;
     height: 100%;
+    position: relative;
+    text-align: center;
     transform-style: preserve-3d;
     transform: rotateX(-15deg) rotateY(15deg);
+    transition: all 0.85s cubic-bezier(0.175, 0.885, 0.320, 1.275);
+    width: 100%;
 }
 
 ._3d-face {
-    overflow: hidden;
-    position: absolute;
-
-    border: 1px solid #888;
-    background: #FFF;
-    box-shadow: inset 0 0 60px rgba(0, 0, 0, 0.1),
-    0 0 50px rgba(0, 0, 0, 0.3);
-    color: #333;
-    line-height: var(--cubeWidth);
-    opacity: 0.8;
-
-    background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #FFF;
+    border: 1px solid #888;
+    box-shadow: inset 0 0 60px rgba(0, 0, 0, 0.1), 0 0 50px rgba(0, 0, 0, 0.3);
+    color: #333;
+    line-height: var(--cubeWidth);
+    opacity: 0.95;
+    overflow: hidden;
+    position: absolute;
 }
 
 ._3d-face--front {
-    width: var(--cubeWidth);
     height: var(--cubeHeight);
     transform: translate3d(0, 0, calc(var(--cubeDepth) / 2));
+    width: var(--cubeWidth);
 }
 
 ._3d-face--top {
-    width: var(--cubeWidth);
     height: var(--cubeDepth);
     transform: rotateX(90deg) translate3d(0, 0, calc(var(--cubeHeight) / 2));
+    width: var(--cubeWidth);
 }
 
 ._3d-face--bottom {
-    width: var(--cubeWidth);
     height: var(--cubeDepth);
     transform: rotateX(-90deg) translate3d(0, 0, calc(var(--cubeHeight) / 2));
+    width: var(--cubeWidth);
 }
 
 ._3d-face--left {
-    width: var(--cubeDepth);
     height: var(--cubeHeight);
     left: 50%;
     margin-left: calc((0px - var(--cubeDepth)) / 2);
     transform: rotateY(-90deg) translate3d(0, 0, calc(var(--cubeWidth) / 2));
+    width: var(--cubeDepth);
 }
 
 
 ._3d-face--right {
-    width: var(--cubeDepth);
     height: var(--cubeHeight);
     left: 50%;
     margin-left: calc((0px - var(--cubeDepth)) / 2);
     transform: rotateY(90deg) translate3d(0, 0, calc(var(--cubeWidth) / 2));
+    width: var(--cubeDepth);
 }
 
 
 ._3d-face--back {
-    width: var(--cubeWidth);
     height: var(--cubeHeight);
     transform: rotateY(180deg) translate3d(0, 0, calc(var(--cubeDepth) / 2));
+    width: var(--cubeWidth);
 }
 
 ._3d-face--front {
